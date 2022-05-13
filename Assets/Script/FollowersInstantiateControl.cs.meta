@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: e445d9b6670a31a4e9aa23b45d04d7a2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - MainCharacter: {instanceID: 0}
+  - anim: {instanceID: 0}
+  - FollowersParent: {instanceID: 0}
+  - RedFollowersParent: {instanceID: 0}
+  - YellowFollowersParent: {instanceID: 0}
+  - follower: {instanceID: 0}
+  - Redfollower: {instanceID: 0}
+  - Yellowfollower: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
