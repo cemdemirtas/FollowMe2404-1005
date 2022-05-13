@@ -10,10 +10,10 @@ public class FollowersInstantiateControl : MonoBehaviour
     public GameObject MainCharacter;
     public Animator anim;
     public List<GameObject> followers;
-    public Transform FollowersParent, RedFollowersParent,YellowFollowersParent;
+    public Transform FollowersParent, RedFollowersParent, YellowFollowersParent;
     float RandomPosXLeft, RandomPosXRight, RandomPosXCenter, RandomPosZ, RandomPosX;
     List<float> Xvalues = new List<float>();
-    public GameObject follower, Redfollower,Yellowfollower;
+    public GameObject follower, Redfollower, Yellowfollower;
     public void Awake()
     {
         RandomPosXLeft = -8;
@@ -38,20 +38,21 @@ public class FollowersInstantiateControl : MonoBehaviour
 
         RandomPosZ = Random.Range(-10, 238);
 
-
-        //RedFollower instantiate
-        if (RedFollowersParent.childCount <= 3) // clone 15 followers
+        if (RedFollowersParent != null)
         {
-            GameObject InstantiateFollower = (GameObject)Instantiate(Redfollower, new Vector3(Xvalues[Random.RandomRange(1, 3)], transform.position.y, Random.Range(-10, 238)), Quaternion.identity);
-            float distance = Mathf.Abs(InstantiateFollower.transform.position.z - MainCharacter.transform.position.z);
+            //RedFollower instantiate
+            if (RedFollowersParent.childCount <= 3) // clone 15 followers
+            {
+                GameObject InstantiateFollower = (GameObject)Instantiate(Redfollower, new Vector3(Xvalues[Random.RandomRange(1, 3)], transform.position.y, Random.Range(-10, 238)), Quaternion.identity);
+                float distance = Mathf.Abs(InstantiateFollower.transform.position.z - MainCharacter.transform.position.z);
 
-            //InstantiateFollower.transform.SetParent(FollowersParent);
-            InstantiateFollower.transform.name = "RedClonefollower" + Random.RandomRange(0, 150);
-            InstantiateFollower.transform.parent = RedFollowersParent.transform;
+                //InstantiateFollower.transform.SetParent(FollowersParent);
+                InstantiateFollower.transform.name = "RedClonefollower" + Random.RandomRange(0, 150);
+                InstantiateFollower.transform.parent = RedFollowersParent.transform;
+            }
+
         }
-
     }
-
     void Update()
     {
 
@@ -62,36 +63,41 @@ public class FollowersInstantiateControl : MonoBehaviour
         anim.SetBool("Run", true);
         anim.SetBool("Idle1", false);
         //blue follower
-        if (FollowersParent.childCount <= 10) // clone 15 followers
+        if (FollowersParent != null)
         {
-            GameObject InstantiateFollower = (GameObject)Instantiate(follower, new Vector3(Xvalues[Random.RandomRange(1, 3)], transform.position.y, Random.Range(-10, 238)), Quaternion.identity);
-            float distance = Mathf.Abs(InstantiateFollower.transform.position.z - MainCharacter.transform.position.z);
-
-            //InstantiateFollower.transform.SetParent(FollowersParent);
-            InstantiateFollower.transform.name = "Blueclonefollower" + Random.RandomRange(0, 150);
-            InstantiateFollower.transform.parent = FollowersParent.transform;
-
-            for (int i = 0; i < FollowersParent.childCount; i++)
+            if (FollowersParent.childCount <= 10) // clone 15 followers
             {
-                followers.Add(FollowersParent.GetChild(i).gameObject);
+                GameObject InstantiateFollower = (GameObject)Instantiate(follower, new Vector3(Xvalues[Random.RandomRange(1, 3)], transform.position.y, Random.Range(-10, 238)), Quaternion.identity);
+                float distance = Mathf.Abs(InstantiateFollower.transform.position.z - MainCharacter.transform.position.z);
+
+                //InstantiateFollower.transform.SetParent(FollowersParent);
+                InstantiateFollower.transform.name = "Blueclonefollower" + Random.RandomRange(0, 150);
+                InstantiateFollower.transform.parent = FollowersParent.transform;
+
+                for (int i = 0; i < FollowersParent.childCount; i++)
+                {
+                    followers.Add(FollowersParent.GetChild(i).gameObject);
+                }
+
+
             }
-
-
         }
-        if (YellowFollowersParent.childCount <= 3) // clone 15 followers
+        if (YellowFollowersParent != null)
         {
-            GameObject InstantiateFollower = (GameObject)Instantiate(Yellowfollower, new Vector3(Xvalues[Random.RandomRange(1, 3)], transform.position.y, Random.Range(-10, 238)), Quaternion.identity);
-            float distance = Mathf.Abs(InstantiateFollower.transform.position.z - MainCharacter.transform.position.z);
+            if (YellowFollowersParent.childCount <= 3) // clone 15 followers
+            {
+                GameObject InstantiateFollower = (GameObject)Instantiate(Yellowfollower, new Vector3(Xvalues[Random.RandomRange(1, 3)], transform.position.y, Random.Range(-10, 238)), Quaternion.identity);
+                float distance = Mathf.Abs(InstantiateFollower.transform.position.z - MainCharacter.transform.position.z);
 
-            //InstantiateFollower.transform.SetParent(FollowersParent);
-            InstantiateFollower.transform.name = "YellowClonefollower" + Random.RandomRange(0, 150);
-            InstantiateFollower.transform.parent = YellowFollowersParent.transform;
-
-        
+                //InstantiateFollower.transform.SetParent(FollowersParent);
+                InstantiateFollower.transform.name = "YellowClonefollower" + Random.RandomRange(0, 150);
+                InstantiateFollower.transform.parent = YellowFollowersParent.transform;
 
 
+
+
+            }
         }
-
     }
 
 

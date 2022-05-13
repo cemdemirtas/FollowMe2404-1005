@@ -30,11 +30,17 @@ public class MoveFollower : MonoBehaviour
 
     void Update()
     {
-        transform.position = new Vector3(
-            Mathf.Lerp(transform.position.x, Last.position.x, Time.deltaTime * 20),  //we provide smoothly
-            transform.position.y,
-            Last.position.z + i // last character pos.z + 5
-            );
+        if (transform!=null && Last!=null)
+        {
+            transform.position = new Vector3(
+         Mathf.Lerp(transform.position.x, Last.position.x, Time.deltaTime * 20),  //we provide smoothly
+         transform.position.y,
+         Last.position.z + i // last character pos.z + 5
+         );
+        }
+           
+        
+      
         //transform.position = new Vector3(
         //  transform.position.x,  //we provide smoothly
         //  Last.position.y+1,
