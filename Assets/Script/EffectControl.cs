@@ -16,7 +16,7 @@ public class EffectControl : MonoBehaviour
             Instance = this;
         }
     }
-
+    
     private void FixedUpdate()
     {
         DeadEffect.transform.position = transform.position;
@@ -59,7 +59,6 @@ public class EffectControl : MonoBehaviour
             DestroyChild();
             //gameObject.SetActive(false);
             //Follower.gameObject.SetActive(false);
-
             Debug.Log("red or yellow");
         }
 

@@ -95,6 +95,7 @@ public class DirectionalMove : MonoBehaviour
             anim.SetBool("Dance", true);
             anim.SetBool("Run", false);
             anim.SetBool("Dance", true);
+            GameManager.Instance.gamestate = GameManager.GameState.Next;
         }
 
 

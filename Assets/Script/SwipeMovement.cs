@@ -17,7 +17,7 @@ public class SwipeMovement : MonoBehaviour
         
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float swerveAmount = Time.deltaTime * swerveSpeed * _swerveInput._MoveFactorX;
         transform.Translate(swerveAmount, 0, 0);

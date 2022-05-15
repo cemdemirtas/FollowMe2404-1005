@@ -28,7 +28,7 @@ public class dg_simpleCamFollow : MonoBehaviour
 
         if (target != null) {
             whereCameraShouldBe = target.position + generalOffset;
-            transform.position = Vector3.Lerp(transform.position, whereCameraShouldBe, 1 / laziness);
+            transform.position = Vector3.Lerp(transform.position, whereCameraShouldBe, 1 / laziness*Time.deltaTime) ;
 
             if (lookAtTarget) transform.LookAt(target);
         } else {
