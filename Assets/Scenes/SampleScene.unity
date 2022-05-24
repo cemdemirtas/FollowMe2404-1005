@@ -2062,7 +2062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5639202794262202564, guid: 7bc5ba508c9a34942a8f924c256db154, type: 3}
       propertyPath: takeOffsetFromInitialPos
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5639202794262202565, guid: 7bc5ba508c9a34942a8f924c256db154, type: 3}
       propertyPath: m_ClearFlags
@@ -2110,15 +2110,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5639202794262202586, guid: 7bc5ba508c9a34942a8f924c256db154, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -87.312836
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5639202794262202586, guid: 7bc5ba508c9a34942a8f924c256db154, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 546
+      value: 823
       objectReference: {fileID: 0}
     - target: {fileID: 5639202794262202586, guid: 7bc5ba508c9a34942a8f924c256db154, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1448
+      value: -1398
       objectReference: {fileID: 0}
     - target: {fileID: 5639202794262202586, guid: 7bc5ba508c9a34942a8f924c256db154, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3582,13 +3582,13 @@ Transform:
   - {fileID: 1820658016}
   - {fileID: 2007061316}
   - {fileID: 684794542}
-  - {fileID: 1024363957}
   - {fileID: 94481660}
+  - {fileID: 1024363957}
   - {fileID: 622667373}
-  - {fileID: 56323698}
   - {fileID: 375691181}
   - {fileID: 1262552404}
   - {fileID: 281599342}
+  - {fileID: 56323698}
   - {fileID: 314839750}
   - {fileID: 1660579587}
   - {fileID: 531686829}
@@ -6441,6 +6441,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2056013872739953023, guid: d1ad0ec576ba3154d91c59d024dbd1d6, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2056013872924788552, guid: d1ad0ec576ba3154d91c59d024dbd1d6, type: 3}
       propertyPath: m_Name
       value: --EffectController

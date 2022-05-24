@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class EffectControl : MonoBehaviour
 {
     public static EffectControl Instance;
@@ -16,7 +16,7 @@ public class EffectControl : MonoBehaviour
             Instance = this;
         }
     }
-    
+     
     private void FixedUpdate()
     {
         DeadEffect.transform.position = transform.position;
@@ -30,7 +30,7 @@ public class EffectControl : MonoBehaviour
 
     public void PlayEffect()
     {
-        ParticleSystem effect = Instantiate(DeadEffect, new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z), transform.rotation) as ParticleSystem;
+        ParticleSystem effect = Instantiate(DeadEffect, new Vector3(transform.localPosition.x, transform.localPosition.y + 2f, transform.localPosition.z), transform.rotation) as ParticleSystem;
         effect.Play();
     }
 
@@ -43,7 +43,7 @@ public class EffectControl : MonoBehaviour
                 for (int i = 0; i < ActiveFollowers.childCount; i++)
                 {
                     //ActiveFollowers.GetChild(i).gameObject.SetActive(false);
-                    Destroy(ActiveFollowers.GetChild(i).gameObject, 0.5f);
+                    Destroy(ActiveFollowers.GetChild(i).gameObject, 1.5f);
 
                 }
             }
@@ -54,8 +54,7 @@ public class EffectControl : MonoBehaviour
     {
         if (other.gameObject.tag == "RedFollower" || other.gameObject.tag == "YellowFollower")
         {
-
-            PlayEffect();
+            InvokeRepeating("PlayEffect", 0.02f,1f);
             DestroyChild();
             //gameObject.SetActive(false);
             //Follower.gameObject.SetActive(false);
